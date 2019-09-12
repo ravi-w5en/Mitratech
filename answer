@@ -1,0 +1,54 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Conver {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s = new Scanner(System.in);
+		String s1=s.nextLine();
+		//System.out.println(s1);
+		String s2[]=s1.split(" ");
+		List<String> l1 = new ArrayList<String>();
+		List<Integer> l2 = new ArrayList<Integer>();
+		l1.add("in");l2.add(1000);
+		l1.add("ft");l2.add(12);
+		l1.add("yd");l2.add(3);
+		l1.add("ch");l2.add(22);
+		l1.add("fur");l2.add(10);
+		l1.add("mi");l2.add(8);
+		l1.add("lea");l2.add(3);
+		List<String> l = new ArrayList<String>(Arrays.asList(s2));
+		int i1=l1.indexOf(s2[1]);
+		int i2=l1.indexOf(s2[3]);
+		int n=i1-i2;
+		System.out.println(n+" "+i1+" "+i2);
+		double sum=1*(Integer.parseInt(s2[0]));
+		if((i1-i2)>0)
+		{
+			while(n>0)
+			{
+				sum=sum*l2.get(n);
+				n--;
+			}
+		}
+		else
+		{
+			n= Math.abs(n);
+			while(i1<i2)
+			{
+			
+				sum=sum/(l2.get(++i1));
+				
+			}
+			
+		}
+		
+System.out.println(sum);
+	}
+
+}
